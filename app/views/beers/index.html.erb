@@ -1,0 +1,8 @@
+<h1>All Beers</h1>
+
+<ul class="beer-list">
+  <% @beers.each do |beer| %>
+    <li><%= link_to beer.name, beer_path(beer) %></li>
+  <% end %>
+</ul>
+

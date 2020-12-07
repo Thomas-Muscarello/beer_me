@@ -1,0 +1,18 @@
+<h1>Howdy <%= @user.username %>!</h1>
+
+You have posted on <%=@user.beers.uniq.length %> individual beers.
+<ul class="beer-list">
+  <% @user.beers.uniq.each do |beer| %>
+    <li> <%=link_to beer.name, beer_path(beer) %></li>
+  <% end %>
+  </ul>
+
+  You have posted <%=@user.posts.length %> individual posts.
+<ul class="posts-list">
+
+  <%  @user.posts.each do |post| %>
+    <li> <%=link_to post.text_area, beer_post_path(post.beer_id, post.id) %></li>
+  
+  <% end %>
+  </ul>
+

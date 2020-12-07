@@ -1,0 +1,27 @@
+<h1><%= @beer.name %></h1>
+<ul class="beer-items">
+  <li> Malt Type: <%=@beer.malt%></li>
+  <li> Malt Amount in Pounds: <%=@beer.malt_amount%> </li>
+  <li> Hop Type <%=@beer.hop%></li>
+  <li> Hop Amount in Ounces <%=@beer.hop_amount%></li>
+  <li> Yeast Type: <%=@beer.yeast%></li>
+  <li> Yeast Amount in Ounces <%=@beer.yeast_amount%></li>
+  <li> ABV: <%=@beer.abv%></li>
+</ul>
+
+
+<%= link_to "Edit", edit_beer_path(@beer) %>
+<%= link_to "Remove", beer_path(@beer), method: :delete %>
+
+
+<h3>Posts: </h3>
+<ul class="posts-list">
+  <% @beer.posts.each do |post| %>
+   <li> <%=post.text_area%> </li>
+  <% end %>
+  </ul>
+
+<h3>Make a New Post</h3>
+<%= render "partials/post" %>
+  
+ 

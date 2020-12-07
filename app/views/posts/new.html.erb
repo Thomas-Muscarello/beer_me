@@ -1,0 +1,12 @@
+<h1>Create a new Post</h1>
+
+<%= form_with model: @post, url: beer_posts_path(@beer), method: :post do |f| %>
+  <%= render "partials/errors", errors: @post&.errors&.full_messages %>
+  
+
+  <%= f.label :text_area %>
+  <%= f.text_field :text_area %>
+
+  <%= f.submit %>
+
+<% end %>

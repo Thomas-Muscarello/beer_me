@@ -1,0 +1,8 @@
+<h2>Your Post for <%="#{@beer.name}"%>: </h2>
+
+<h1> "<%=@post.text_area%>" </h1>
+<br>
+
+<%= link_to "Remove", beer_post_path(@beer, @post), method: :delete %>
+<%= link_to "Edit", edit_beer_post_path(@beer, @post) %>
+<%= link_to "Go to #{@beer.name}", beer_path(@beer) %>

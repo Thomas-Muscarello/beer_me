@@ -1,0 +1,21 @@
+<h1>Sign Up</h1>
+
+<%= form_with model: @user, local: true do |f| %>
+
+  <%= render "partials/errors", errors: @user&.errors&.full_messages %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+
+  <%= f.submit "Sign Up" %>
+
+<% end %>

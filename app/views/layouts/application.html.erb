@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BeerMe</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <div id="flash-message">
+      <p><%= flash[:message] %></p>
+    </div>
+
+  <nav>
+  <% if current_user %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+    <%= link_to "User Page", user_path(current_user) %>
+    <%= link_to "Beers", beers_path %>
+    <%= link_to "Add Beer", new_beer_path %>
+    <%= link_to "ABV Above 5%", abv_higher_than_5_path %>
+  <% else %>
+    <%= link_to "Login", login_path %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In With Google", '/auth/google_oauth2' %>
+  <% end%>
+</nav>
+    <%= yield %>
+
+    
+  </body>
+
+</html>

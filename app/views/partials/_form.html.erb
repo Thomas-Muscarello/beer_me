@@ -1,0 +1,37 @@
+<h1><%= title %></h1>
+
+<%= form_with model: @beer, local: true do |form| %>
+
+  <%= render "partials/errors", errors: @beer&.errors&.full_messages %>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :malt %>
+    <%= form.text_field :malt %>
+
+    <%= form.label :malt_amount %>
+    <%= form.number_field :malt_amount %>
+
+    <%= form.label :hop %>
+    <%= form.text_field :hop %>
+
+    <%= form.label :hop_amount %>
+    <%= form.number_field :hop_amount %>
+
+    <%= form.label :yeast %>
+    <%= form.text_field :yeast %>
+
+    <%= form.label :yeast_amount %>
+    <%= form.number_field :yeast_amount %>
+    <br>
+
+    <%= form.label :abv %>
+    <%= form.number_field :abv, step: :any %>
+    <br>
+
+    <%= render "partials/post" %>
+
+    <%= form.submit %>
+
+<% end %>
